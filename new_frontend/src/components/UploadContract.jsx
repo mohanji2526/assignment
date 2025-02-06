@@ -19,7 +19,7 @@ const UploadContract = () => {
     e.preventDefault();
     try {
       console.log(formData);
-      const response = await axios.post('http://localhost:5000/api/contracts', {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/contracts`, {
         ...formData,
         details: JSON.parse(formData.details)
       });

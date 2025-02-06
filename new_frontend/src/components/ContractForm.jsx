@@ -17,7 +17,7 @@ const ContractForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/contracts', formData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/contracts`, formData);
       alert('Contract uploaded successfully!');
       console.log(response.data);
     } catch (error) {

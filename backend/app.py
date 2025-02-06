@@ -12,9 +12,6 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)  
-
-# Database configuration//
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://your_db_user:your_db_password@localhost/contracts_db'
 app.config['SQLALCHEMY_DATABASE_URI']=os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

@@ -13,7 +13,7 @@ const ContractItem = ({ contract, fetchContracts }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/contracts/${contract.id}`, formData);
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/contracts/${contract.id}`, formData);
       setIsEditing(false);
       fetchContracts();
       alert('Contract updated successfully!');
@@ -24,7 +24,7 @@ const ContractItem = ({ contract, fetchContracts }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/contracts/${contract.id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/contracts/${contract.id}`);
       fetchContracts();
       alert('Contract deleted successfully!');
     } catch (error) {
