@@ -117,6 +117,3 @@ def handle_connect():
 def handle_disconnect():
     print('Client disconnected')
 
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
-
